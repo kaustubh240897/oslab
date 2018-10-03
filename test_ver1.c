@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-// A normal C function that is executed as a thread
+// A normal C function that is executed as a thread and create it.
 // when its name is specified in pthread_create()
 void *myThreadFun(void *vargp)
 {
@@ -13,9 +13,9 @@ void *myThreadFun(void *vargp)
 int main()
 {
     pthread_t tid;
-    printf("Before Thread\n");
+    printf("Before current Thread\n");
     pthread_create(&tid, NULL, myThreadFun, NULL);
     pthread_join(tid, NULL);
-    printf("After Thread\n");
+    printf("After current  Thread\n");
     exit(0);
 }
